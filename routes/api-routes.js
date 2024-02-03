@@ -1,7 +1,7 @@
 // Imports express
-const router = require('express').Router();
-
+const api = require('express').Router();
+const path = require('path');
 
 
 // Exports the app
-module.exports = router;
+module.exports = api;
