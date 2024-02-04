@@ -21,10 +21,10 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
 // Middleware to use api routes
-app.use(apiRoutes)
+app.use(apiRoutes);
 
 // Middleware to use html routes
-app.use(htmlRoutes)
+app.use(htmlRoutes);
 
 // listen() method is responsible for listening for incoming connections on the specified port
 app.listen(PORT, () =>
