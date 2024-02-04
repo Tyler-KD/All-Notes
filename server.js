@@ -28,5 +28,5 @@ app.use(htmlRoutes);
 
 // listen() method is responsible for listening for incoming connections on the specified port
 app.listen(PORT, () =>
-    console.log(`Example app listening at http://localhost:${PORT}`)
+    console.log(`All Notes app listening at http://localhost:${PORT}`)
 );

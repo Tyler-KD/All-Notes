@@ -1,6 +1,5 @@
 // Imports express
 const api = require('express').Router();
-const path = require('path');
 // UUID (Universally Unique Identifier) is a 128-bit unique identifier 
 // that is used in computer systems to identify resources such as files, objects, and components.
 // UUID v4 uses the host's source of random or pseudo-random numbers to issue its values
@@ -44,19 +43,22 @@ api.post('/api/notes', (req, res) => {
     })
 });
 
+// This API route is the DELETE Route for reading all notes from the db.json, 
+// removing the note with the given id property, and then rewriting the notes to the db.json
 api.delete('/api/notes/:id', (req, res) => {
     console.info(`${req.method} request received for /api/notes:id`)
     fs.readFile('./db/db.json', 'utf-8', (err, data) => {
         const allNotes = JSON.parse(data)
-        console.log(allNotes)
+        // console.log(allNotes)
+        // const result filters through allNotes array and returns only the notes without the requested id
         const result = allNotes.filter(function(newNotes) {
             return newNotes.id !== req.params.id;
         });
         console.log(result);
+        console.log("Note deleted");
+        // The filtered result array rewrites the notes to the db.json
         fs.writeFileSync('./db/db.json', JSON.stringify(result))
-        res.json('note deleted')
-        
-
+        res.json(result)
     })
 })
 

@@ -1,128 +1,105 @@
-# 11 Express.js: Note Taker
+# All Notes
 
-## Your Task
+![GitHub License](https://img.shields.io/badge/license-MIT-default.svg)
 
-Your assignment is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+## Description
 
-The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
+All Notes is an application that can be used to write and save notes.  Since the application's front end was already created, this project was designed to build the back end, connect the two by way of Express.js framework, and then deploy the entire epplication to Heroku.  This project solves the problem of wanting to be able to write and save notes so that thoughts are organized and tasks needed to complete are kept track of.  Some things learned throughout All Notes are understanding the usefulness of modularization through an express.Router class, seeing middleware in action as connections between request and response, and employing while recognizing differences between GET, POST, AND DELETE routes.  Seeing the relationship betweeen the front end and back end helps explain how client-side requests are related to server-side responses.
 
-## User Story
+## Table of Contents
 
-```
-AS A small business owner
-I WANT to be able to write and save notes
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
-```
+* [Installation](#installation)
+* [Usage](#usage)
+* [Video](#video)
+* [Credits](#credits)
+* [Contributing](#contributing)
+* [License](#license)
+* [Tests](#tests)
+* [Features](#features)
+* [Questions](#questions)
 
-## Acceptance Criteria
+## Installation
 
-```
-GIVEN a note-taking application
-WHEN I open the Note Taker
-THEN I am presented with a landing page with a link to a notes page
-WHEN I click on the link to the notes page
-THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-WHEN I enter a new note title and the note’s text
-THEN a "Save Note" button and a "Clear Form" button appear in the navigation at the top of the page
-WHEN I click on the Save button
-THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes and the buttons in the navigation disappear
-WHEN I click on an existing note in the list in the left-hand column
-THEN that note appears in the right-hand column and a "New Note" button appears in the navigation
-WHEN I click on the "New Note" button in the navigation at the top of the page
-THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column and the button disappears
-```
+First, clone the starter code and make own respository with the starter code.  Within the main directory, install dependencies by opening the terminal and entering "npm i."  After installing dependencies, install the Universally Unique Identifier library with the command "npm i uuidv4."  UUID is used to identify objects for purposes of saving notes to the request body and returning those notes to the client when clicking the notes.
 
-## Mock-Up
+## Usage
 
-The following GIF shows the web application's appearance and functionality:
+To run this application from the terminal, enter "npm start" within the console.  The message "Example app listening at http://localhost:3001" will log in the console.  To follow the link, press (ctrl + click) on the URL.  When the page opens up, a landing page is presented with a link to the notes page.  Click on the link to the notes page and a page with existing notes are displayed on the left-hand column while new notes are available to make on the right-hand column.  Enter a new note title and note text.  In the top right navigation bar, "Clear Form" and "Save Note" buttons will appear after filling out inputs.  After saving a note, it will appear in the left-hand column with other existing notes.  When clicking on an existing note, then that selected note and text will appear in fields on the right-hand column with a "New Note" button appearing in the top right navigation bar.  Clicking the "New Note" button will empty the fields so that a new note and text can be entered.  Finally, delete an existing note by clicking on the trashcan icon to right of each note.
 
-![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo.gif)
+To run this application from Heroku, open the deployed application URL and follow previous instructions from the landing page.
 
-## Getting Started
+**Attached is a screenshot of the Landing Page:**
 
-On the back end, the application should include a `db.json` file that will be used to store and retrieve notes using the `fs` module.
+![Landing-Page](./Assets/images/All%20Notes%20Landing%20Page.png)
 
-The following HTML routes should be created:
+**Attached is a screenshot of the Notes Page:**
 
-* `GET /notes` should return the `notes.html` file.
+![Notes-Page](./Assets/images/All%20Notes%20Notes%20Page.png)
 
-* `GET *` should return the `index.html` file.
+## Video
 
-The following API routes should be created:
+N/A
 
-* `GET /api/notes` should read the `db.json` file and return all saved notes as JSON.
+## Credits
 
-* `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
+[Steps to create an Express.js App](https://www.geeksforgeeks.org/steps-to-create-an-express-js-application/)
 
-## Bonus
+[Express Routing](https://expressjs.com/en/guide/routing.html#express-router)
 
-You haven’t learned how to handle DELETE requests, but this application offers that functionality on the front end. As a bonus, try to add the DELETE route to the application using the following guideline:
+[Node.js Path Module](https://www.w3schools.com/nodejs/ref_path.asps)
 
-* `DELETE /api/notes/:id` should receive a query parameter that contains the id of a note to delete. To delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+[How to read and write JSON files in node.js](https://attacomsian.com/blog/nodejs-read-write-json-files)
 
-## Grading Requirements
+[How to create a GUID / UUID in JS?](https://www.geeksforgeeks.org/how-to-create-a-guid-uuid-in-javascript/)
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+[What are UUIDs and Why are They Useful?](https://www.howtogeek.com/devops/what-are-uuids-and-why-are-they-useful/)
 
-This Challenge is graded based on the following criteria:
+[Express app.delete() Function](https://www.geeksforgeeks.org/express-js-app-delete-function/)
 
-### Technical Acceptance Criteria: 40%
+[Map() vs Filter() in JS](https://www.geeksforgeeks.org/map-vs-filter-in-javascript/)
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+[The difference between the filer() and map() array methods in JS](https://medium.com/@c.mansour/the-difference-between-the-filter-and-map-array-methods-in-javascript-f8164f65fa5e)
 
-  * Application front end must connect to an Express.js back end.
+[Deploying with Git | Heroku Dev Center](https://devcenter.heroku.com/articles/git#create-a-heroku-remote)
 
-  * Application back end must store notes that have a unique id in a JSON file.
+## Contributing
 
-  * Application must be deployed to Heroku.
+N/A
 
-### Deployment: 36%
+## License
 
-* Application deployed at live URL.
+MIT License
 
-* Application loads with no errors.
+Copyright (c) 2024 Tyler-KD
 
-* Application GitHub URL submitted.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-* GitHub repository contains application code.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### Application Quality: 11%
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-* Application console is free of errors.
+* (https://choosealicense.com/licenses/mit/)
 
-### Repository Quality: 13%
+## Tests
 
-* Repository has a unique name.
+N/A
 
-* Repository follows best practices for file structure and naming conventions.
+## Features
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+node.js, npm (node package manager), express.js 4.18.2, UUIDv4 (Universally Unique Identifier) 6.2.13, express.Router, fs (File System), path module, Heroku
 
-* Repository contains multiple descriptive commit messages.
+## Questions
 
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Bonus: +10 Points
-
-Fulfilling the following can add up to 10 points to your grade. Note that the highest grade you can achieve is still 100:
-
-* Application allows users to delete notes.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
-- - -
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+If you have any questions, please visit [GitHub/Tyler-KD](https://github.com/Tyler-KD) or submit questions to tyler.kd.knapp@gmail.com.
