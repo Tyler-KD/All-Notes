@@ -44,13 +44,19 @@ api.post('/api/notes', (req, res) => {
     })
 });
 
-api.delete('/notes/:id', (req, res) => {
+api.delete('/api/notes/:id', (req, res) => {
     console.info(`${req.method} request received for /api/notes:id`)
     fs.readFile('./db/db.json', 'utf-8', (err, data) => {
         const allNotes = JSON.parse(data)
-        allNotes.findIndex(req.params.id).splice(req.params.id)
-        fs.writeFileSync('/db/db.json', JSON.stringify(allNotes))
+        console.log(allNotes)
+        const result = allNotes.filter(function(newNotes) {
+            return newNotes.id !== req.params.id;
+        });
+        console.log(result);
+        fs.writeFileSync('./db/db.json', JSON.stringify(result))
         res.json('note deleted')
+        
+
     })
 })
 
