@@ -1,6 +1,10 @@
 // Imports express
 const api = require('express').Router();
 const path = require('path');
+// UUID (Universally Unique Identifier) is a 128-bit unique identifier 
+// that is used in computer systems to identify resources such as files, objects, and components.
+// UUID v4 uses the host's source of random or pseudo-random numbers to issue its values
+const { v4: uuidv4 } = require('uuid');
 // Imports the File System Module
 const fs = require('fs');
 
@@ -25,7 +29,12 @@ api.post('/api/notes', (req, res) => {
         // const notes = array of existing data
         const notes = JSON.parse(data)
         // const newNote = array of new data
-        const newNote = req.body
+        const newNote = {
+            title: req.body.title,
+            text: req.body.text,
+            // id utilizes the "UUID" library to generate a random UUID
+            id: uuidv4(),
+        }
         // newNote data is pushed into notes array
         notes.push(newNote)
         // writeFileSync method synchronously writes data to a file
