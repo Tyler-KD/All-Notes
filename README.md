@@ -31,11 +31,11 @@ To run this application from Heroku, open the deployed application URL and follo
 
 **Attached is a screenshot of the Landing Page:**
 
-![Landing-Page](./Assets/images/All%20Notes%20Landing%20Page.png)
+![Landing-Page](./Assets/images/All%20Notes%20Landing%20Page(1).png)
 
 **Attached is a screenshot of the Notes Page:**
 
-![Notes-Page](./Assets/images/All%20Notes%20Notes%20Page.png)
+![Notes-Page](./Assets/images/All%20Notes%20Notes%20Page(1).png)
 
 ## Video
 
@@ -43,7 +43,7 @@ N/A
 
 ## Deployed Site
 
-[]()
+[All Notes](https://all-notes-e16ad98ac8f6.herokuapp.com/)
 
 ## Credits
 
